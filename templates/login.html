@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>Login Page</title>
+{% endblock title %}
+
+{% block form %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+     <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+  <strong>Messsage:</strong> {{message}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+  <div class="container">
+    <h1 class="text-center my-4">Login Form</h1>
+    <form action="/login" method="post">
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" class="form-control" name="uname" id="username" aria-describedby="emailHelp">
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>   
+{% endblock form %}

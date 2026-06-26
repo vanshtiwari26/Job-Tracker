@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Edit Page</title>
+{% endblock title %}
+
+{% block form %}
+
+<div class="container">
+  <form action="/edit/{{data.id}}" method="post">
+    <div class="mb-3">
+      <label for="company" class="form-label">Company</label>
+      <input type="text" class="form-control" value="{{data.company}}" name="company" id="company"
+        aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="role" class="form-label">Role</label>
+      <input type="text" class="form-control" value="{{data.role}}" name="role" id="role" aria-describedby="emailHelp">
+    </div>
+    <select class="form-select" name="status" aria-label="Default select example">
+
+
+      <option value="Applied" {% if data.status=='Applied' %} selected{% endif %}>Applied</option>
+      <option value="Interview" {% if data.status=='Interview' %} selected {% endif %}>Interview</option>
+      <option value="Offer" {% if data.status=='Offer' %} selected{% endif %}>Offer</option>
+      <option value="Rejected" {% if data.status=='Rejected' %} selected {% endif %}>Rejected</option>
+    </select>
+
+    <div class="container my-4">
+      <button type="submit" class="btn btn-primary">Update job</button>
+    </div>
+
+  </form>
+</div>
+
+{% endblock form %}
