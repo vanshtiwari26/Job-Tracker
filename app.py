@@ -14,7 +14,9 @@ from flask_login import current_user
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///userdata.db'
-app.config['SECRET_KEY'] = os.urandom(24)  # here why 24 bcz its standard size
+#  this will break the server on render 
+# app.config['SECRET_KEY'] = os.urandom(24)  # here why 24 bcz its standard size
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev-secret-key")
 
 db = SQLAlchemy(app)
 
