@@ -19,8 +19,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///userdata.db'
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev-secret-key")
 
 db = SQLAlchemy(app)
-with app.app_context():
-    db.create_all()
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -39,6 +37,8 @@ class job(db.Model):
     user_id = db.Column(db.Integer,db.ForeignKey('user.id'),nullable=False)
     
 
+with app.app_context():
+    db.create_all()
 
 @login_manager.user_loader
 def load_user(id):
