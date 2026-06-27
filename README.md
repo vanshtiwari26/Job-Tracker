@@ -1,37 +1,51 @@
-# Job Tracker
+# Job Tracker Web App
 
-A simple Job Tracker web application built using Flask that helps users manage their job applications.
+A simple Flask-based Job Tracker application that helps users manage their job applications. Users can register, log in, and perform full CRUD operations on job entries.
 
-## Features
+---
 
-* User Registration
-* User Login & Logout
-* Secure Password Hashing
-* Add Job Applications
-* Update Job Applications
-* Delete Job Applications
-* Flash Messages
-* User-specific Dashboard
+## 🚀 Live Demo
 
-## Technologies Used
+https://your-render-link.onrender.com
+
+---
+
+## 📌 Features
+
+* User Registration & Login system
+* Password hashing for security
+* Add new job applications
+* Edit job details
+* Delete job entries
+* User-specific job dashboard
+* Flash messages for user feedback
+* Secure authentication using Flask-Login
+
+---
+
+## 🛠️ Tech Stack
 
 * Python
 * Flask
-* Flask-SQLAlchemy
 * Flask-Login
+* Flask-SQLAlchemy
 * SQLite
-* Bootstrap 5
+* HTML
+* Bootstrap
 
-## How to Run
+---
 
-1. Clone the repository.
-2. Install the required packages.
-3. Run:
+## ⚙️ Installation (Local Setup)
 
 ```bash
+git clone https://github.com/your-username/job-tracker.git
+cd job-tracker
+pip install -r requirements.txt
 python app.py
 ```
 
-## About
+---
 
-This project was built to practice Flask, user authentication, CRUD operations, SQLAlchemy, and Git/GitHub.
+## 👨‍💻 Author
+
+Vansh Tiwari
